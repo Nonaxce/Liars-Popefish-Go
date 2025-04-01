@@ -47,11 +47,30 @@ NOTE: this was the first considerations, newer versions will have already establ
 
 #### Game engine 🎮
 
-1. kaplay.js 🦎 - typescript
+1. kaplay.js 🦎
+2. Any other js/ts game framework
+3. love2d framework ♥
+4. Godot
+5. Unity?
+
+#### Frameworks (for server com)
+
+1. React (heavy)
+2. Vue (lightweight at least)
 
 #### Hosting (web + server) 💾
 
-1. Firebase RTDB + Hosting + Cloudflare CDN
+_All using Cloudflare DNS_
 
+1. Vercel + Supabase
+2. Cloudflare pages + Google Firebase
+3. Just Firebase
+
+#### Other tech
+
+1. Socket.io? (server com)
+2. Expressjs
+
+should i even use typescript?...
 
 > You may lie, but when fate appoints the witted, the truth shall prevail... or not.
