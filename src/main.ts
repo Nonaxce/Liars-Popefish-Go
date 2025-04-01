@@ -1,9 +1,7 @@
-import kaplay from "kaplay";
-// import "kaplay/global"; // uncomment if you want to use without the k. prefix
+import { k } from "./engine"    //  get kaplay context
+import "./loader";              // load all assets on start
 
-const k = kaplay();
-
-k.loadRoot("./"); // A good idea for Itch.io publishing later
+k.loadRoot("./");
 k.loadSprite("bean", "sprites/bean.png");
 
 k.add([k.pos(120, 80), k.sprite("bean")]);
