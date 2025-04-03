@@ -28,7 +28,7 @@ k.scene("menu", () => {
         k.color(k.BLACK),
         k.text("START", {
             size: 22,
-            width: enterButton.width, // it'll wrap to next line when width exceeds this value
+            width: enterButton.width, 
             font: "tiny5", 
         })
     ])
@@ -46,7 +46,7 @@ k.scene("game", () => {
         k.color(k.BLACK),
         k.text("L I A R ' S P O P O E F  I  S    H GO", {
             size: 22,
-            width: 100, // it'll wrap to next line when width exceeds this value
+            width: 100, 
             font: "tiny5", 
         })
     ])
