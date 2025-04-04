@@ -1,3 +1,3 @@
 make menu page with inputs
 
-connect to firebase
+remove api key
