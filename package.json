@@ -9,6 +9,7 @@
 		"check": "tsc"
 	},
 	"dependencies": {
+		"firebase": "^11.6.0",
 		"kaplay": "^3001.0.10"
 	},
 	"devDependencies": {

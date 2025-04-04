@@ -1,0 +1,1 @@
+export const colors = {"Charcoal":"264653","Persiangreen":"2a9d8f","Saffron":"e9c46a","Sandybrown":"f4a261","Burntsienna":"e76f51"}

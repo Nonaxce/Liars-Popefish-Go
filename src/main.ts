@@ -1,78 +1,49 @@
-import { get } from "http";
 import { k } from "./engine"    // get kaplay context
 import "./loader";              // load all assets on start
+import { colors } from "./utils"
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyC8bbqqqeZP2u7iU9t1FxmwwYCGPzn5AG0",
+  authDomain: "lpfg-devtest.firebaseapp.com",
+  databaseURL: "https://lpfg-devtest-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "lpfg-devtest",
+  storageBucket: "lpfg-devtest.firebasestorage.app",
+  messagingSenderId: "1038529881681",
+  appId: "1:1038529881681:web:eb328803403ddef504fa70",
+  measurementId: "G-6MBNDZHN28"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+
+
+
+
+
+
+
+
+
+
 
 k.loadRoot("./");
-
-const colors = {"Charcoal":"264653","Persiangreen":"2a9d8f","Saffron":"e9c46a","Sandybrown":"f4a261","Burntsienna":"e76f51"}
-
 function getColor(obj : string | number) {
     return k.Color.fromHex(obj)
 }
 
+k.scene("menu", () => {})
 
-// TODO add ui
-k.scene("menu", () => {
-    k.setBackground(getColor(colors.Saffron))
-    // empty for now
-    const enterButton = k.add([
-        k.pos(k.center()),
-        k.rect(80, 60),
-        k.area(),
-        k.anchor("center")
-    ])
-
-    const text = enterButton.add([
-        k.pos(9, 0),
-        k.anchor("center"),
-        k.color(k.BLACK),
-        k.text("START", {
-            size: 22,
-            width: enterButton.width, 
-            font: "tiny5", 
-        })
-    ])
-
-    enterButton.onClick(() => {
-        k.go("game")
-    })
-})
-
-
-k.scene("game", () => {     
-    const title = k.add([
-        k.pos(k.center()),
-        k.anchor("center"),
-        k.color(k.BLACK),
-        k.text("L I A R ' S P O P O E F  I  S    H GO", {
-            size: 22,
-            width: 100, 
-            font: "tiny5", 
-        })
-    ])
-
-    const backButton = k.add([
-        k.pos(60, 50),
-        k.rect(80, 60),
-        k.area(),
-        k.anchor("center")
-    ])
-
-    const text = backButton.add([
-        k.pos(9, 0),
-        k.anchor("center"),
-        k.color(k.BLACK),
-        k.text("BACK <-", {
-            size: 22,
-            width: backButton.width, // it'll wrap to next line when width exceeds this value
-            font: "tiny5", 
-        })
-    ])
-
-    backButton.onClick(() => {
-        k.go("menu")
-    })
-})
+k.scene("game", () => {})
 
 k.onLoad(() => k.go("menu"))
 
