@@ -33,25 +33,28 @@ const database = getDatabase(app);
 (function() {
 
 
-    let playerId;
-    let playerRef; // reference to database
+    let playerId : any;
+    let playerRef : any; // reference to database
+    
     onAuthStateChanged(auth, (user) => {
         console.log(user)
+        // check if user exists and signed in anonymously 
         if (user.isAnonymous && user) {
             
             console.log("Logged in")
 
             playerId = user.uid;
+            // create reference to database
             playerRef = ref(database, `players/${playerId}`)
 
-
+            // init player data
             set(playerRef, {
                 hand: [],
                 name: "Popoefish",
                 isTurn: false
             })
 
-
+            // remove player data from db when disconnect
             onDisconnect(playerRef).remove()
 
         } else {
