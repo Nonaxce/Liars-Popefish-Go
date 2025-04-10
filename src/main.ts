@@ -1,5 +1,6 @@
 import { k } from "./engine"    // get kaplay context
 import "./loader";              // load all assets on start
+import {} from "./constants"
 import { colors } from "./utils"
 
 // Import the functions you need from the SDKs you need
@@ -32,10 +33,9 @@ const database = getDatabase(app);
 // start
 (function() {
 
-
     let playerId : any;
     let playerRef : any; // reference to database
-    
+
     onAuthStateChanged(auth, (user) => {
         console.log(user)
         // check if user exists and signed in anonymously 
@@ -51,7 +51,7 @@ const database = getDatabase(app);
             set(playerRef, {
                 hand: [],
                 name: "Popoefish",
-                isTurn: false
+                isTurn: false   
             })
 
             // remove player data from db when disconnect
@@ -65,7 +65,9 @@ const database = getDatabase(app);
 
 
     signInAnonymously(auth).then(() => {
-        // stuff when signed in
+    // stuff when signed in
+
+
     }).catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
@@ -73,7 +75,6 @@ const database = getDatabase(app);
         console.error(errorCode, errorMessage);
     })  
     
-
 
 })();
 
