@@ -1,21 +1,19 @@
-import { k } from "./engine"    // get kaplay context
-import "./loader";              // load all assets on start
-import {} from "./constants"
-import { colors } from "./utils"
+import { config } from "./_firebase/config";    // get firebase api config
+import { k } from "./engine"                    // get kaplayjs context
+import "./loader";                              // load all assets on start
+import {} from "./constants"                    // constants
+import { colors } from "./utils"                // others
+
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth, onAuthStateChanged, signInAnonymously } from "firebase/auth";
 import { getDatabase, set, ref, onDisconnect } from "firebase/database";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
- 
-};
+const firebaseConfig = config;
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -70,6 +68,9 @@ const database = getDatabase(app);
     
 
 })();
+
+
+
 
 
 
