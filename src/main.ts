@@ -1,8 +1,7 @@
 import { config } from "./_firebase/config";    // get firebase api config
 import { k } from "./engine"                    // get kaplayjs context
 import "./loader";                              // load all assets on start
-import {} from "./constants"                    // constants
-import { colors } from "./utils"                // others
+
 
 // later
 /*
