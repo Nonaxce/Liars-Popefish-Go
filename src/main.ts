@@ -1,26 +1,24 @@
-import { config } from "./_firebase/config";    // get firebase api config
+import { config } from "./config";    // get firebase api config
 import { k } from "./engine"                    // get kaplayjs context
 import "./loader";                              // load all assets on start
 
-
-// later
-/*
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import { getAuth, onAuthStateChanged, signInAnonymously } from "firebase/auth";
 import { getDatabase, set, ref, onDisconnect } from "firebase/database";
-import { setBackground } from "kaplay/dist/declaration/gfx";
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = config;
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const database = getDatabase(app);
+
+
+function log(s: any): void {
+    console.log(s);
+}
+
 
 // start
 (function() {
@@ -31,13 +29,12 @@ const database = getDatabase(app);
     let roomRef : any
 
    
-
     onAuthStateChanged(auth, (user) => {
-        console.log(user)
+        log(user)
         // check if user exists and signed in anonymously 
         if (user.isAnonymous && user) {
             
-            console.log("Logged in")
+            log("Logged in")
 
             playerId = user.uid;
             // create reference to database
@@ -45,7 +42,7 @@ const database = getDatabase(app);
             
             // init player data
             set(playerRef, {
-                hand: [],
+                hand: ["a", "b", "c"],
                 name: "Popoefish",
                 isTurn: false   
             })
@@ -56,24 +53,19 @@ const database = getDatabase(app);
 
             // remove player data from db when disconnect
             onDisconnect(playerRef).remove()
-            //onDisconnect(roomRef).remove()
 
         } else {
-
-            console.log("Logged out")
+            log("Logged out")
         }
     })
 
 
     signInAnonymously(auth).then(() => {
     // stuff when signed in
-        k.go("game")
+        k.go("menu")
         
         roomsRef = ref(database, `rooms`)
 
-        roomsRef.push({
-            hi: "a"
-        })
 
     }).catch((error) => {
         const errorCode = error.code;
@@ -86,35 +78,43 @@ const database = getDatabase(app);
 })();
 
 
-k.scene("game", () => {
-    k.setBackground(0, 0, 200)
-
-    k.debug.log(k.isTouchscreen())
-})
-    */
 
 k.scene("menu", () => {
 
+    k.add([k.pos(0, 0),k.sprite("tiled", {width: k.width(),height: k.height(),tiled: true})])
+
+    k.add([k.pos(k.center()),k.text(k.getSceneName(), {font: "tiny5"})])
 })
 
 k.scene("game", () => {
     
-    k.setBackground(k.Color.fromHex("D98324"))
+    k.setBackground(k.BLACK)
     
+    k.add([k.pos(0, 0),k.sprite("tiled", {width: k.width(),height: k.height(),tiled: true})])
 
+    k.add([k.pos(k.center()),k.text(k.getSceneName(), {font: "tiny5"})])
+    /*
 
     function createCard(x : number, y: number, card: object): any {
         return k.make([
             k.pos(x, y),
-            k.sprite("clubs_A"),
-            k.scale(5),
+            k.sprite("clubs_king"),
+            k.scale(1),
             k.area(),
+            //k.rotate(k.rand(-2, 2)),
             k.anchor("center"),
             "card"
         ])
     }
 
+    interface Player {
 
+    }
+
+
+    function createPlayer(): any {
+
+    }
 
 
     // TODO: seperate into ui files or smth
@@ -128,38 +128,35 @@ k.scene("game", () => {
     ])
     
     let newPos : number = 0;
-
-
+    const cardPosY : number = playerHand.pos.y - 100
     for (let i = 0; i < 5; i++) {
-       k.add(createCard(playerHand.pos.x + newPos - 200, playerHand.pos.y - 100, {}))
-       newPos += 110    
+       k.add(createCard(playerHand.pos.x + newPos - 100, cardPosY, {}))
+       newPos += 60   
 
     }
 
-    
-
-    k.onClick("card", (card) => {
-        if (card.sprite == "back") {
-            card.use(k.sprite("clubs_A"))
-        } else {
-            card.use(k.sprite("back"))
-        }
+    let draggedCard : any = null;
+    k.onHover("card", (card) => {
         
     })
 
-
-    k.onHover("card", (card) => {
-        card.pos.y -= 40   
+    k.onHoverUpdate("card", (card) => {
+        if (k.isMouseDown("left")) {
+            draggedCard = card;   
+        }
     })
-
+    
     k.onHoverEnd("card", (card) => {
-        card.pos.y += 40
+        draggedCard = null
     })
+
+    */
+    
 
 })
 
 
-k.go("game")
+k.go("menu");
 
 
 
