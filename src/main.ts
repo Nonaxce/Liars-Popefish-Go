@@ -61,6 +61,22 @@ function deckArrayToString(arr: string[]): string | void {
     return result;
 }
 
+const suits : string[] = ["C", "S", "H", "D"];
+const ranks : string[] = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+// kay built different (joker red and black) 💪💪💪
+const jokers : string[] = ["JR", "JB"];
+
+
+function initDeck() : string[] {
+    const deck : string[] = [];
+    for(const suit of suits) {
+        for(const rank of ranks) {
+            deck.push(`${suit}${rank}`)
+        }
+    }
+    for(const j of jokers) deck.push(j);
+    return deck;
+}
 
 
 
@@ -69,8 +85,8 @@ function deckArrayToString(arr: string[]): string | void {
 
     let playerId : any;
     let playerRef : any; // reference to database
-    let roomsRef : any 
-    let roomRef : any
+    let roomsRef : any ;
+    let roomRef : any;
 
      
     onAuthStateChanged(auth, (user) => {
