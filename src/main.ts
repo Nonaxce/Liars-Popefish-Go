@@ -1,6 +1,15 @@
-import { config } from "./config";    // get firebase api config
-import { k } from "./engine"                    // get kaplayjs context
-import "./loader";                              // load all assets on start
+/****************************************************
+ * LIARS POPEFISH GO
+ * @readonly
+ * 
+ * 
+ * HI might use supabase 
+ ***************************************************/
+
+
+import { config } from "./config";           // get firebase api config
+import { k } from "./engine"                 // get kaplayjs context
+import "./loader";                           // load all assets on start
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
@@ -15,9 +24,44 @@ const auth = getAuth(app);
 const database = getDatabase(app);
 
 
-function log(s: any): void {
-    console.log(s);
+/**
+ * @todo - move to new file "helpers.ts"
+ */
+// helpers
+
+// three characters version of console.log()
+const log = (s: any): void => console.log(s);
+
+// get the file size in bytes of a string
+const byteSize = (str: string) : number => new Blob([str]).size
+
+// convert string encoded deck to array for client use
+function deckStringToArray(str: string) : string[] | void {
+    // is it even? an string of 2 char substrings is always even
+    if (str.length % 2 != 0) return log("invalid deck");
+
+    // mince the string into an array of 2 characters
+    let result : string[] = [];
+    for (let i = 0; i < str.length; i += 2) {
+        result.push(str.slice(i, i+2))
+    }
+    return result;
 }
+
+// convert array encoded deck to string for db use
+function deckArrayToString(arr: string[]): string | void {
+    // is it even? an array of 2 char items is always even
+    if (arr.length % 2 != 0) return log("invalid deck");
+
+    // 
+    let result : string = "";
+    for(const substr of arr) {
+        result += substr;
+    }
+    return result;
+}
+
+
 
 
 // start
@@ -28,7 +72,7 @@ function log(s: any): void {
     let roomsRef : any 
     let roomRef : any
 
-   
+     
     onAuthStateChanged(auth, (user) => {
         log(user)
         // check if user exists and signed in anonymously 
@@ -42,6 +86,7 @@ function log(s: any): void {
             
             // init player data
             set(playerRef, {
+                // TODO convert to string
                 hand: ["a", "b", "c"],
                 name: "Popoefish",
                 isTurn: false   
@@ -64,6 +109,7 @@ function log(s: any): void {
     // stuff when signed in
         k.go("menu")
         
+        // idk
         roomsRef = ref(database, `rooms`)
 
 
