@@ -29,3 +29,18 @@ export function deckArrayToString(arr: string[]): string | void {
     }
     return result;
 }
+
+export function initDeck() : string[] {
+    const suits : string[] = ["C", "S", "H", "D"];
+    const ranks : string[] = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+    const jokers : string[] = ["JR", "JB"];
+
+    const deck : string[] = [];
+    for(const suit of suits) {
+        for(const rank of ranks) {
+            deck.push(`${suit}${rank}`)
+        }
+    }
+    for(const j of jokers) deck.push(j);
+    return deck;
+}
