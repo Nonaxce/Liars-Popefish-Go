@@ -1,4 +1,3 @@
-import { height } from "kaplay/dist/declaration/gfx";
 import { k } from "./engine";
 
 // sprites

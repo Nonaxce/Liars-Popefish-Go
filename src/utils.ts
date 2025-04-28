@@ -35,12 +35,14 @@ export function initDeck() : string[] {
     const ranks : string[] = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
     const jokers : string[] = ["JR", "JB"];
 
+    // create standard deck
     const deck : string[] = [];
     for(const suit of suits) {
         for(const rank of ranks) {
             deck.push(`${suit}${rank}`)
         }
     }
+    // add jokers
     for(const j of jokers) deck.push(j);
     return deck;
 }

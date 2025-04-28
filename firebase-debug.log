@@ -1,0 +1,79 @@
+[debug] [2025-04-27T07:41:30.558Z] ----------------------------------------------------------------------
+[debug] [2025-04-27T07:41:30.561Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2025-04-27T07:41:30.561Z] CLI Version:   14.0.0
+[debug] [2025-04-27T07:41:30.561Z] Platform:      win32
+[debug] [2025-04-27T07:41:30.561Z] Node Version:  v20.8.1
+[debug] [2025-04-27T07:41:30.561Z] Time:          Sun Apr 27 2025 15:41:30 GMT+0800 (Philippine Standard Time)
+[debug] [2025-04-27T07:41:30.562Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-04-27T07:41:30.753Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-04-27T07:41:30.753Z] > authorizing via signed-in user (agsisasleep@gmail.com)
+[debug] [2025-04-27T07:41:30.956Z] openjdk version "21.0.7" 2025-04-15 LTS
+
+[debug] [2025-04-27T07:41:30.957Z] OpenJDK Runtime Environment Temurin-21.0.7+6 (build 21.0.7+6-LTS)
+OpenJDK 64-Bit Server VM Temurin-21.0.7+6 (build 21.0.7+6-LTS, mixed mode, sharing)
+
+[debug] [2025-04-27T07:41:30.972Z] Parsed Java major version: 21
+[info] i  emulators: Starting emulators: auth, database {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: auth, database"}}
+[debug] [2025-04-27T07:41:30.994Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-04-27T07:41:30.994Z] [auth] Authentication Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-04-27T07:41:30.994Z] [database] Database Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-04-27T07:41:30.994Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"auth":[{"address":"127.0.0.1","family":"IPv4","port":9099}],"database":[{"address":"127.0.0.1","family":"IPv4","port":9000}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2025-04-27T07:41:30.998Z] [hub] writing locator at C:\Users\USER\AppData\Local\Temp\hub-lpfg-devtest.json
+[debug] [2025-04-27T07:41:31.006Z] Checked if tokens are valid: true, expires at: 1745742458436
+[debug] [2025-04-27T07:41:31.006Z] Checked if tokens are valid: true, expires at: 1745742458436
+[debug] [2025-04-27T07:41:31.007Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/lpfg-devtest [none]
+[debug] [2025-04-27T07:41:31.522Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/lpfg-devtest 200
+[debug] [2025-04-27T07:41:31.522Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/lpfg-devtest {"projectId":"lpfg-devtest","projectNumber":"1038529881681","displayName":"lpfg-devtest","name":"projects/lpfg-devtest","resources":{"hostingSite":"lpfg-devtest","realtimeDatabaseInstance":"lpfg-devtest-default-rtdb"},"state":"ACTIVE","etag":"1_08db1dab-0794-4558-b482-c7302687dc22"}
+[debug] [2025-04-27T07:41:31.524Z] database rules config:  [{"instance":"lpfg-devtest-default-rtdb","rules":"C:\\Users\\USER\\Documents\\GitHub\\Liars-Popoefish-Go\\database.rules.json"}]
+[debug] [2025-04-27T07:41:31.534Z] Ignoring unsupported arg: projectId {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: projectId"}}
+[debug] [2025-04-27T07:41:31.534Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2025-04-27T07:41:31.535Z] Ignoring unsupported arg: rules {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: rules"}}
+[debug] [2025-04-27T07:41:31.535Z] Starting Database Emulator with command {"binary":"java","args":["-Duser.language=en","-jar","C:\\Users\\USER\\.cache\\firebase\\emulators\\firebase-database-emulator-v4.11.2.jar","--host","127.0.0.1","--port",9000,"--single_project_mode","Warning"],"optionalArgs":["port","host","functions_emulator_port","functions_emulator_host","single_project_mode"],"joinArgs":false,"shell":false,"port":9000} {"metadata":{"emulator":{"name":"database"},"message":"Starting Database Emulator with command {\"binary\":\"java\",\"args\":[\"-Duser.language=en\",\"-jar\",\"C:\\\\Users\\\\USER\\\\.cache\\\\firebase\\\\emulators\\\\firebase-database-emulator-v4.11.2.jar\",\"--host\",\"127.0.0.1\",\"--port\",9000,\"--single_project_mode\",\"Warning\"],\"optionalArgs\":[\"port\",\"host\",\"functions_emulator_port\",\"functions_emulator_host\",\"single_project_mode\"],\"joinArgs\":false,\"shell\":false,\"port\":9000}"}}
+[info] i  database: Database Emulator logging to database-debug.log {"metadata":{"emulator":{"name":"database"},"message":"Database Emulator logging to \u001b[1mdatabase-debug.log\u001b[22m"}}
+[debug] [2025-04-27T07:41:32.882Z] 15:41:32.880 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+ {"metadata":{"emulator":{"name":"database"},"message":"15:41:32.880 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started\r\n"}}
+[debug] [2025-04-27T07:41:33.084Z] 15:41:33.084 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000
+ {"metadata":{"emulator":{"name":"database"},"message":"15:41:33.084 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000\r\n"}}
+[debug] [2025-04-27T07:41:39.121Z] >>> [apiv2][query] PUT http://127.0.0.1:9000/.settings/rules.json ns=lpfg-devtest-default-rtdb
+[debug] [2025-04-27T07:41:39.121Z] >>> [apiv2][body] PUT http://127.0.0.1:9000/.settings/rules.json "{\n  \"rules\": {\n    \".read\": \"auth != null\",\n    \".write\": false,\n    \"players\": {\n      \"$uid\": {\n        \".write\": \"auth != null && auth.uid == $uid\",\n        \".read\": \"auth != null && auth.uid == $uid\"\n      }\n    }\n  }\n}"
+[debug] [2025-04-27T07:41:39.445Z] 15:41:39.445 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO com.firebase.core.namespace.NamespaceActor - lpfg-devtest-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 167ms, init: 0ms
+ {"metadata":{"emulator":{"name":"database"},"message":"15:41:39.445 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO com.firebase.core.namespace.NamespaceActor - lpfg-devtest-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 167ms, init: 0ms\r\n"}}
+[debug] [2025-04-27T07:41:39.528Z] 15:41:39.528 [NamespaceSystem-blocking-namespace-operation-dispatcher-6] INFO com.firebase.core.namespace.StateManager - Namespace lpfg-devtest-default-rtdb status Active to Active
+ {"metadata":{"emulator":{"name":"database"},"message":"15:41:39.528 [NamespaceSystem-blocking-namespace-operation-dispatcher-6] INFO com.firebase.core.namespace.StateManager - Namespace lpfg-devtest-default-rtdb status Active to Active\r\n"}}
+[debug] [2025-04-27T07:41:39.573Z] <<< [apiv2][status] PUT http://127.0.0.1:9000/.settings/rules.json 200
+[debug] [2025-04-27T07:41:39.574Z] <<< [apiv2][body] PUT http://127.0.0.1:9000/.settings/rules.json {"status":"ok"}
+[debug] [2025-04-27T07:41:39.577Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: . If you are not running the Firebase Data Connect VSCode extension, this is expected and not an issue.
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌────────────────┬────────────────┬────────────────────────────────┐
+│ Emulator       │ Host:Port      │ View in Emulator UI            │
+├────────────────┼────────────────┼────────────────────────────────┤
+│ Authentication │ 127.0.0.1:9099 │ http://127.0.0.1:4000/auth     │
+├────────────────┼────────────────┼────────────────────────────────┤
+│ Database       │ 127.0.0.1:9000 │ http://127.0.0.1:4000/database │
+└────────────────┴────────────────┴────────────────────────────────┘
+  Emulator Hub host: 127.0.0.1 port: 4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2025-04-27T07:41:54.992Z] 15:41:54.991 [FirebaseWorkerPool-1-4] WARN com.firebase.core.persistence.backend.dummy.EmulatorMetadataPersistence - Multiple projectIds are not recommended in single project mode. Requested 
+namespace lpfg-devtest, but the emulator is configured for lpfg-devtest-default-rtdb. To 
+opt-out of single project mode add/set the singleProjectMode: false property in 
+the firebase.json emulators config. 
+ {"metadata":{"emulator":{"name":"database"},"message":"15:41:54.991 [FirebaseWorkerPool-1-4] WARN com.firebase.core.persistence.backend.dummy.EmulatorMetadataPersistence - Multiple projectIds are not recommended in single project mode. Requested \nnamespace lpfg-devtest, but the emulator is configured for lpfg-devtest-default-rtdb. To \nopt-out of single project mode add/set the singleProjectMode: false property in \nthe firebase.json emulators config. \r\n"}}
+[debug] [2025-04-27T07:41:55.002Z] 15:41:55.002 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO com.firebase.core.namespace.NamespaceActor - lpfg-devtest successfully activated FBKV (SurveyIdle(0)) wait: 3ms, init: 0ms
+ {"metadata":{"emulator":{"name":"database"},"message":"15:41:55.002 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO com.firebase.core.namespace.NamespaceActor - lpfg-devtest successfully activated FBKV (SurveyIdle(0)) wait: 3ms, init: 0ms\r\n"}}
+[debug] [2025-04-27T07:41:55.497Z] 15:41:55.496 [FirebaseWorkerPool-1-1] WARN com.firebase.core.persistence.backend.dummy.EmulatorMetadataPersistence - Multiple projectIds are not recommended in single project mode. Requested 
+namespace fake-server, but the emulator is configured for lpfg-devtest,lpfg-devtest-default-rtdb. To 
+opt-out of single project mode add/set the singleProjectMode: false property in 
+the firebase.json emulators config. 
+ {"metadata":{"emulator":{"name":"database"},"message":"15:41:55.496 [FirebaseWorkerPool-1-1] WARN com.firebase.core.persistence.backend.dummy.EmulatorMetadataPersistence - Multiple projectIds are not recommended in single project mode. Requested \nnamespace fake-server, but the emulator is configured for lpfg-devtest,lpfg-devtest-default-rtdb. To \nopt-out of single project mode add/set the singleProjectMode: false property in \nthe firebase.json emulators config. \r\n"}}
+[debug] [2025-04-27T07:41:55.500Z] 15:41:55.499 [NamespaceSystem-akka.actor.default-dispatcher-9] INFO com.firebase.core.namespace.NamespaceActor - fake-server successfully activated FBKV (SurveyIdle(0)) wait: 1ms, init: 0ms
+ {"metadata":{"emulator":{"name":"database"},"message":"15:41:55.499 [NamespaceSystem-akka.actor.default-dispatcher-9] INFO com.firebase.core.namespace.NamespaceActor - fake-server successfully activated FBKV (SurveyIdle(0)) wait: 1ms, init: 0ms\r\n"}}
+[debug] [2025-04-27T10:10:53.381Z] Received signal SIGHUP 1
