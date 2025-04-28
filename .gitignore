@@ -2,4 +2,5 @@ node_modules/
 dist/
 .DS_Store
 devNotes.md
-src/_firebase/config.ts
+database-debug.log
+firebase-debug.log
