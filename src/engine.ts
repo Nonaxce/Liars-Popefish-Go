@@ -10,8 +10,10 @@ export const k = kaplay({
     height: 320,
     scale: 3,
     letterbox: false,
-    font: "monospace",
+    font: "tiny5",
     pixelDensity: 1,
+    debug: true, // change this 
+    debugKey: "f1",
     crisp: true,
     canvas: document.querySelector("#gameContainer"),
     background: [255, 255, 255],
