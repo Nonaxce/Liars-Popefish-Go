@@ -13,14 +13,14 @@ export const k = kaplay({
     font: "tiny5",
     pixelDensity: 1,
     debug: true, // change this 
-    debugKey: "f1",
+    debugKey: "f1", 
     crisp: true,
     canvas: document.querySelector("#gameContainer"),
     background: [255, 255, 255],
     texFilter: "nearest",
     logMax: 8,
     logTime: 6,
-    hashGridSize: 32,
+    hashGridSize: 32,  // 64 too overkill
     touchToMouse: true,
     loadingScreen: true,
     backgroundAudio: false,
