@@ -9,6 +9,7 @@
 		"check": "tsc"
 	},
 	"dependencies": {
+		"@supabase/supabase-js": "^2.57.4",
 		"kaplay": "^3001.0.10"
 	},
 	"devDependencies": {
